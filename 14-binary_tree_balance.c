@@ -12,24 +12,24 @@ int binary_tree_balance(const binary_tree_t *tree)
 
 	if (!tree)
 		return (0);
-	b = _height(tree->left) - _height(tree->right);
+	b = __height(tree->left) - __height(tree->right);
 	return (b);
 }
 
 /**
- * height - measures height
+ * __height - measures height
  * @node: node to measure
  *
  * Return: height
  */
-int _height(binary_tree_t *node)
+int __height(binary_tree_t *node)
 {
 	int left, right;
 
 	if (node == NULL)
 		return (-1);
-	left = _height(node->left);
-	right = _height(node->right);
+	left = __height(node->left);
+	right = __height(node->right);
 	if (left > right)
 		return (left + 1);
 	else
